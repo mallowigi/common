@@ -1,7 +1,6 @@
 {
-  "name": "common",
+  "name": "@micro/common",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +9,13 @@
   "license": "ISC",
   "dependencies": {
     "class-validator": "^0.11.0",
-    "nest": "^0.1.6"
+    "nest": "^0.1.6",
+    "winston": "latest"
   },
   "devDependencies": {
+    "@types/winston": "^2.4.4",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
-  }
+  },
+  "description": ""
 }
