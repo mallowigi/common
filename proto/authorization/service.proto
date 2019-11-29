@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package service;
+
+service GrpcService {
+  rpc Can (CanRequest) returns (CanResponse) {
+  }
+  rpc CanOnInstance (CanOnInstanceRequest) returns (CanOnInstanceResponse) {
+  }
+  rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
+  };
+  rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
+  };
+}
+
+message Subject {
+  string name = 1;
+  string conditionFieldName = 2;
+}
+
+message Permission {
+  Subject subject = 1;
+  repeated string actions = 2;
+}
+
+message Role {
+  string id = 1;
+  string userId = 2;
+  string type = 3;
+  repeated Permission permissions = 4;
+}
+
+message CanRequest {
+  string userId = 1;
+  string action = 2;
+  string subject = 3;
+}
+
+message CanResponse {
+  bool yes = 1;
+}
+
+
+message CanOnInstanceRequest {
+  string userId = 1;
+  string action = 2;
+  string subject = 3;
+  string subjectId = 4;
+}
+
+message CanOnInstanceResponse {
+  bool yes = 1;
+}
+
+message CreateRoleRequest {
+  string userId = 1;
+  // type can be admin or user
+  string type = 2;
+}
+
+message CreateRoleResponse {
+  Role role = 1;
+}
+
+message GetRolesRequest {
+  string userId = 1;
+}
+
+message GetRolesResponse {
+  repeated Role roles = 1;
+}
