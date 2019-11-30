@@ -15,7 +15,7 @@ service UsersService {
 // Requests
 message ListRequest {
   Query query = 1;
-  Paginate paginate = 2;
+  Pagination pagination = 2;
 }
 
 message GetRequest {
@@ -42,7 +42,7 @@ message Query {
   string authorId = 1;
 }
 
-message Paginate {
+message Pagination {
   int32 limit = 1;
   int32 page = 2;
 }
