@@ -6,6 +6,6 @@ export const usersGrpcClientOptions: ClientOptions = {
   options:   {
     url:       'users:50050',
     package:   'service',
-    protoPath: join(__dirname, './service.proto'),
+    protoPath: join(__dirname, '../../../proto/users/service.proto'),
   },
 };
