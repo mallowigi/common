@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 export declare interface IQuery {
   authorId?: string;
 }
@@ -7,34 +9,34 @@ export declare interface IPagination {
   page: number;
 }
 
-export declare interface ListRequest {
-  query?: IQuery;
-  pagination?: IPagination;
-}
-
 export declare interface IUser {
   id?: string;
   username: string;
   password: string;
 }
 
-export declare interface GetRequest {
+export declare interface ListUsersRequest {
+  query?: IQuery;
+  pagination?: IPagination;
+}
+
+export declare interface GetUserRequest {
   id: string;
 }
 
-export declare interface CreateRequest<T extends IUser> {
+export declare interface CreateUserRequest<T extends IUser> {
   username: string;
   password: string;
 }
 
-export declare interface CreateResponse<T> {
+export declare interface CreateUserResponse<T> {
   user: T;
 }
 
 export declare interface IUsersService {
-  list(req: ListRequest): Promise<IUser[]>;
+  list(req: ListUsersRequest): Observable<IUser>;
 
-  get(req: GetRequest): Promise<IUser>;
+  get(req: GetUserRequest): Promise<IUser>;
 
-  create(req: CreateRequest<IUser>): Promise<CreateResponse<IUser>>;
+  create(req: CreateUserRequest<IUser>): Promise<CreateUserResponse<IUser>>;
 }

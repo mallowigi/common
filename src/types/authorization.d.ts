@@ -1,24 +1,24 @@
 export declare type SubjectType = 'all' | 'articles' | 'comments' | 'users';
 
-export declare interface Subject {
+export declare interface ISubject {
   type: SubjectType;
   conditionFieldName: string;
 }
 
 export declare type ActionType = 'manage' | 'read' | 'create' | 'update' | 'delete';
 
-export declare interface Permission {
-  subject: Subject;
+export declare interface IPermission {
+  subject: ISubject;
   actions: ActionType[];
 }
 
 export declare type RoleType = 'admin' | 'user';
 
-export declare interface Role {
+export declare interface IRole {
   id?: string;
   userId: string;
   type: RoleType;
-  permissions: Permission[];
+  permissions: IPermission[];
 }
 
 export declare interface CanRequest {
@@ -47,7 +47,7 @@ export declare interface CreateRoleRequest {
   type: RoleType;
 }
 
-export declare interface CreateRoleResponse<T extends Role> {
+export declare interface CreateRoleResponse<T extends IRole> {
   role: T;
 }
 
@@ -55,11 +55,11 @@ export declare interface GetRolesRequest {
   userId: string;
 }
 
-export declare interface GetRolesResponse<T extends Role> {
+export declare interface GetRolesResponse<T extends IRole> {
   roles: T[];
 }
 
-export declare interface IRolesService<T extends Role> {
+export declare interface IRolesService<T extends IRole> {
   can(req: CanRequest): Promise<CanResponse>;
 
   canOnInstance(req: CanOnInstanceRequest): Promise<CanOnInstanceResponse>;
