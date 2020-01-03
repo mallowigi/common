@@ -1,6 +1,7 @@
-import { IsInt, Min } from 'class-validator';
+import { IsInt, Min }  from 'class-validator';
+import { IPagination } from '../types/users';
 
-export class Pagination {
+export class Pagination implements IPagination {
   @IsInt()
   @Min(1)
   limit: number;
