@@ -1,7 +1,6 @@
 import { IsString } from 'class-validator';
-import { IQuery }   from '../types/users';
 
-export class Query implements IQuery {
+export class Query {
   @IsString()
   authorId?: string;
 }

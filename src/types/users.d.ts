@@ -34,7 +34,7 @@ export declare interface CreateUserResponse<T> {
 }
 
 export declare interface IUsersService {
-  list(req: ListUsersRequest): Observable<IUser>;
+  list(req: ListUsersRequest): Promise<Observable<IUser>>;
 
   get(req: GetUserRequest): Promise<IUser>;
 
