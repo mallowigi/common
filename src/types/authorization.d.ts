@@ -1,18 +1,39 @@
-export declare type SubjectType = 'all' | 'articles' | 'comments' | 'users';
+//region Actions
+import { ActionType, RoleType, SubjectType } from '../schemas';
+
+export declare interface IAction {
+  type: ActionType;
+}
+
+export declare interface ActionTypes {
+  [index: string]: IAction;
+}
+
+//endregion
+
+//region Subjects
 
 export declare interface ISubject {
   type: SubjectType;
-  conditionFieldName: string;
+  actions?: ActionType[];
+  conditionFieldName?: string;
 }
 
-export declare type ActionType = 'manage' | 'read' | 'create' | 'update' | 'delete';
+export declare interface Subjects {
+  [index: string]: ISubject;
+}
 
+//endregion
+
+//region Permissions
 export declare interface IPermission {
   subject: ISubject;
   actions: ActionType[];
 }
 
-export declare type RoleType = 'admin' | 'user';
+//endregion
+
+//region Roles
 
 export declare interface IRole {
   id?: string;
@@ -21,6 +42,18 @@ export declare interface IRole {
   permissions: IPermission[];
 }
 
+export declare interface IPredefRole {
+  type: RoleType;
+  permissions: IPermission[];
+}
+
+export declare interface IRoles {
+  [index: string]: IPredefRole;
+}
+
+//endregion
+
+//region Protocol for Authorization and roles
 export declare interface CanRequest {
   userId: string;
   action: string;
@@ -68,3 +101,5 @@ export declare interface IRolesService<T extends IRole> {
 
   getRoles(req: GetRolesRequest): Promise<GetRolesResponse<T>>;
 }
+
+//endregion
