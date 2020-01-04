@@ -2,6 +2,8 @@ import { Observable } from 'rxjs';
 
 export declare interface IQuery {
   authorId?: string;
+  username?: string;
+  password?: string;
 }
 
 export declare interface IPagination {

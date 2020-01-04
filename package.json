@@ -4,9 +4,11 @@
   "main": "dist/index.js",
   "scripts": {
     "copy": "cp -rv proto dist/proto/",
-    "build": "tsc",
+    "build": "tsc && npm run copy",
     "prestart": "rimraf dist && mkdirp dist && npm run copy && npm run build",
-    "authProto": "grpcnode client ls -I proto authorization/service.proto"
+    "authProto": "grpcnode client ls -I proto auth/service.proto",
+    "rolesProto": "grpcnode client ls -I proto authorization/service.proto",
+    "usersProto": "grpcnode client ls -I proto users/service.proto"
   },
   "author": "",
   "license": "ISC",
