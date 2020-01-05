@@ -10,7 +10,7 @@
     "rolesProto": "grpcnode client ls -I proto authorization/service.proto",
     "usersProto": "grpcnode client ls -I proto users/service.proto"
   },
-  "author": "",
+  "author": "Mallowigi",
   "license": "ISC",
   "dependencies": {
     "@grpc/proto-loader": "^0.5.3",
