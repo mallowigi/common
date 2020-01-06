@@ -1,7 +1,8 @@
 {
-  "name": "@micro/common",
+  "name": "@mallowigi/common",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "repository": "git://github.com/mallowigi/microblog-common.git",
   "scripts": {
     "copy": "cp -rv proto dist/proto/",
     "build": "tsc && npm run copy",
