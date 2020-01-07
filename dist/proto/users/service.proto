@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package service;
+
+// Controller methods
+service UsersService {
+  rpc List (ListRequest) returns (stream User) {
+  }
+  rpc Get (GetRequest) returns (User) {
+  }
+  rpc Create (CreateRequest) returns (CreateResponse) {
+  }
+}
+
+// Requests
+message ListRequest {
+  Query query = 1;
+  Pagination pagination = 2;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message CreateRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message CreateResponse {
+  User user = 1;
+}
+
+// Data structures
+message User {
+  string id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message Query {
+  string authorId = 1;
+}
+
+message Pagination {
+  int32 limit = 1;
+  int32 page = 2;
+}
