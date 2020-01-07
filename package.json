@@ -1,6 +1,6 @@
 {
   "name": "@mallowigi/common",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "repository": "git://github.com/mallowigi/microblog-common.git",
   "scripts": {
