@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package service;
+
+service RolesService {
+  rpc Can (CanRequest) returns (CanResponse) {
+  }
+  rpc CanOnInstance (CanOnInstanceRequest) returns (CanOnInstanceResponse) {
+  }
+  rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse) {
+  };
+  rpc GetRoles (GetRolesRequest) returns (GetRolesResponse) {
+  };
+}
+
+// Subjects
+enum SubjectType {
+  all = 0;
+  articles = 1;
+  comments = 2;
+  users = 3;
+}
+
+message Subject {
+  SubjectType type = 1;
+  string conditionFieldName = 2;
+}
+
+// Actions/Permissions
+enum ActionType {
+  manage = 0;
+  read = 1;
+  create = 2;
+  update = 3;
+  delete = 4;
+}
+
+message Permission {
+  Subject subject = 1;
+  repeated ActionType actions = 2;
+}
+
+// Roles
+enum RoleType {
+  admin = 0;
+  user = 1;
+}
+
+message Role {
+  string id = 1;
+  string userId = 2;
+  RoleType type = 3;
+  repeated Permission permissions = 4;
+}
+
+// Requests
+message CanRequest {
+  string userId = 1;
+  string action = 2;
+  string subject = 3;
+}
+
+message CanResponse {
+  bool yes = 1;
+}
+
+message CanOnInstanceRequest {
+  string userId = 1;
+  string action = 2;
+  string subject = 3;
+  string subjectId = 4;
+}
+
+message CanOnInstanceResponse {
+  bool yes = 1;
+}
+
+// Create a role
+message CreateRoleRequest {
+  string userId = 1;
+  // type can be admin or user
+  RoleType type = 2;
+}
+
+message CreateRoleResponse {
+  Role role = 1;
+}
+
+// Get roles
+message GetRolesRequest {
+  string userId = 1;
+}
+
+message GetRolesResponse {
+  repeated Role roles = 1;
+}
