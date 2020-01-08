@@ -22,7 +22,7 @@ export declare interface ListUsersRequest {
   pagination?: IPagination;
 }
 
-export declare interface GetUserRequest {
+export declare interface GetUserByIdRequest {
   id: string;
 }
 
@@ -38,7 +38,7 @@ export declare interface CreateUserResponse<T> {
 export declare interface IUsersService {
   list(req: ListUsersRequest): Promise<Observable<IUser>>;
 
-  get(req: GetUserRequest): Promise<IUser>;
+  get(req: GetUserByIdRequest): Promise<IUser>;
 
   create(req: CreateUserRequest<IUser>): Promise<CreateUserResponse<IUser>>;
 }
