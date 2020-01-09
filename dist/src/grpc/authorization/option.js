@@ -5,6 +5,7 @@ const path_1 = require("path");
 exports.authorizationGrpcClientOptions = {
     transport: microservices_1.Transport.GRPC,
     options: {
+        url: 'authorization:50050',
         package: 'service',
         protoPath: path_1.join(__dirname, '../../../proto/authorization/service.proto'),
     },
