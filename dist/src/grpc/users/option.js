@@ -5,7 +5,7 @@ const path_1 = require("path");
 exports.usersGrpcClientOptions = {
     transport: microservices_1.Transport.GRPC,
     options: {
-        url: '0.0.0.0:50050',
+        url: '0.0.0.0:50053',
         package: 'service',
         protoPath: path_1.join(__dirname, '../../../proto/users/service.proto'),
     },
