@@ -24,6 +24,7 @@ enum SubjectType {
 message Subject {
   SubjectType type = 1;
   string conditionFieldName = 2;
+  string name = 3;
 }
 
 // Actions/Permissions
