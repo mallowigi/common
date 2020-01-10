@@ -13,6 +13,15 @@ export declare interface ActionTypes {
 
 //region Subjects
 
+export const subjectNames = {
+  ALL:      'all',
+  ARTICLES: 'articles',
+  COMMENTS: 'comments',
+  USERS:    'users',
+};
+
+export type SubjectNames = keyof typeof subjectNames;
+
 export declare interface ISubject {
   name: string;
   type: SubjectType;
@@ -58,7 +67,7 @@ export declare interface IRoles {
 export declare interface CanRequest {
   userId: string;
   action: string;
-  subject: string;
+  subject: SubjectNames;
 }
 
 export declare interface CanResponse {
@@ -68,7 +77,7 @@ export declare interface CanResponse {
 export declare interface CanOnInstanceRequest {
   userId: string;
   action: string;
-  subject: string;
+  subject: SubjectNames;
   subjectId: string;
 }
 
