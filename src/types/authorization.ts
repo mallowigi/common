@@ -14,6 +14,7 @@ export declare interface ActionTypes {
 //region Subjects
 
 export declare interface ISubject {
+  name: string;
   type: SubjectType;
   actions?: ActionType[];
   conditionFieldName?: string;
