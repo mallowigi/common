@@ -25,10 +25,10 @@ export declare interface ActionTypes {
 //region Subjects
 
 export const subjectNames = {
-  ALL:      'all',
-  ARTICLES: 'articles',
-  COMMENTS: 'comments',
-  USERS:    'users',
+  all:      'all',
+  articles: 'articles',
+  comments: 'comments',
+  users:    'users',
 };
 
 export type SubjectNames = keyof typeof subjectNames;
