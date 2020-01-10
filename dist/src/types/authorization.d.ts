@@ -5,6 +5,13 @@ export declare interface IAction {
 export declare interface ActionTypes {
     [index: string]: IAction;
 }
+export declare const subjectNames: {
+    ALL: string;
+    ARTICLES: string;
+    COMMENTS: string;
+    USERS: string;
+};
+export declare type SubjectNames = keyof typeof subjectNames;
 export declare interface ISubject {
     name: string;
     type: SubjectType;
@@ -34,7 +41,7 @@ export declare interface IRoles {
 export declare interface CanRequest {
     userId: string;
     action: string;
-    subject: string;
+    subject: SubjectNames;
 }
 export declare interface CanResponse {
     yes: boolean;
@@ -42,7 +49,7 @@ export declare interface CanResponse {
 export declare interface CanOnInstanceRequest {
     userId: string;
     action: string;
-    subject: string;
+    subject: SubjectNames;
     subjectId: string;
 }
 export declare interface CanOnInstanceResponse {

@@ -6,4 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./grpc"));
 __export(require("./tools"));
 __export(require("./schemas"));
+__export(require("./types"));
 //# sourceMappingURL=index.js.map
