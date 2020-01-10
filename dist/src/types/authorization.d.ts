@@ -6,6 +6,7 @@ export declare interface ActionTypes {
     [index: string]: IAction;
 }
 export declare interface ISubject {
+    name: string;
     type: SubjectType;
     actions?: ActionType[];
     conditionFieldName?: string;
