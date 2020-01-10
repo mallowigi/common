@@ -6,10 +6,10 @@ export declare interface ActionTypes {
     [index: string]: IAction;
 }
 export declare const subjectNames: {
-    ALL: string;
-    ARTICLES: string;
-    COMMENTS: string;
-    USERS: string;
+    all: 'all';
+    articles: 'articles';
+    comments: 'comments';
+    users: 'users';
 };
 export declare type SubjectNames = keyof typeof subjectNames;
 export declare interface ISubject {

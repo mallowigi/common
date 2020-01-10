@@ -1,7 +1,18 @@
 //region Actions
 import { ActionType, RoleType, SubjectType } from '../schemas';
 
+export const actionNames = {
+  manage: 'manage',
+  read:   'read',
+  create: 'create',
+  update: 'update',
+  delete: 'delete',
+};
+
+export type ActionNames = keyof typeof actionNames;
+
 export declare interface IAction {
+  name: ActionNames;
   type: ActionType;
 }
 
