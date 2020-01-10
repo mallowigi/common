@@ -8,9 +8,9 @@ exports.actionNames = {
     delete: 'delete',
 };
 exports.subjectNames = {
-    ALL: 'all',
-    ARTICLES: 'articles',
-    COMMENTS: 'comments',
-    USERS: 'users',
+    all: 'all',
+    articles: 'articles',
+    comments: 'comments',
+    users: 'users',
 };
 //# sourceMappingURL=authorization.js.map
