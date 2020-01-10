@@ -13,7 +13,7 @@ export declare const subjectNames: {
 };
 export declare type SubjectNames = keyof typeof subjectNames;
 export declare interface ISubject {
-    name: string;
+    name: SubjectNames;
     type: SubjectType;
     actions?: ActionType[];
     conditionFieldName?: string;
