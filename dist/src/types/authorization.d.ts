@@ -1,15 +1,24 @@
 import { ActionType, RoleType, SubjectType } from '../schemas';
+export declare const actionNames: {
+    manage: string;
+    read: string;
+    create: string;
+    update: string;
+    delete: string;
+};
+export declare type ActionNames = keyof typeof actionNames;
 export declare interface IAction {
+    name: ActionNames;
     type: ActionType;
 }
 export declare interface ActionTypes {
     [index: string]: IAction;
 }
 export declare const subjectNames: {
-    all: 'all';
-    articles: 'articles';
-    comments: 'comments';
-    users: 'users';
+    ALL: string;
+    ARTICLES: string;
+    COMMENTS: string;
+    USERS: string;
 };
 export declare type SubjectNames = keyof typeof subjectNames;
 export declare interface ISubject {
