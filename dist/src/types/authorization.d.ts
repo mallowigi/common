@@ -8,7 +8,7 @@ export declare const actionNames: {
 };
 export declare type ActionNames = keyof typeof actionNames;
 export declare interface IAction {
-    name: ActionNames;
+    name: ActionNames | string;
     type: ActionType;
 }
 export declare interface ActionTypes {
@@ -22,7 +22,7 @@ export declare const subjectNames: {
 };
 export declare type SubjectNames = keyof typeof subjectNames;
 export declare interface ISubject {
-    name: SubjectNames;
+    name: SubjectNames | string;
     type: SubjectType;
     actions?: ActionType[];
     conditionFieldName?: string;
