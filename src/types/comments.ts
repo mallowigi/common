@@ -58,6 +58,15 @@ export declare interface RemoveCommentResponse<T extends IComment> {
   ok: boolean;
 }
 
+export declare interface RemoveCommentsRequest {
+  articleId: string;
+}
+
+export declare interface RemoveCommentsResponse<T extends IComment> {
+  comments: T[];
+  ok: boolean;
+}
+
 export declare interface ICommentsService {
   list(req: ListCommentsRequest): Promise<Observable<IComment>>;
 
