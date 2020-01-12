@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package service;
+
+// Controller methods
+service CommentsService {
+  rpc List (ListRequest) returns (stream Comment) {
+  }
+  rpc Get (GetRequest) returns (Comment) {
+  }
+  rpc Create (CreateRequest) returns (CreateReponse) {
+  };
+  rpc Update (UpdateRequest) returns (UpdateResponse) {
+  };
+  rpc Remove (RemoveRequest) returns (RemoveResponse) {
+  };
+}
+
+// Requests
+message ListRequest {
+  Query query = 1;
+  Paginate paginate = 2;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message CreateRequest {
+  string content = 1;
+  string articleId = 2;
+  string authorId = 3;
+}
+
+message CreateReponse {
+  Comment comment = 1;
+}
+
+message UpdateRequest {
+  string id = 1;
+  string content = 2;
+}
+
+message UpdateResponse {
+  Comment comment = 1;
+}
+
+message RemoveRequest {
+  string id = 1;
+}
+
+message RemoveResponse {
+  Comment comment = 1;
+  bool ok = 2;
+}
+
+// Data
+message Comment {
+  string id = 1;
+  string content = 2;
+  string articleId = 3;
+  string authorId = 4;
+}
+
+message Comments {
+  repeated Comment comment = 1;
+}
+
+
+message Query {
+  string authorId = 1;
+  string articleId = 2;
+}
+
+message Paginate {
+  uint32 page = 1;
+  uint32 limit = 2;
+}
