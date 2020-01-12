@@ -47,7 +47,7 @@ exports.authGrpcClient = {
     options: {
         url: '0.0.0.0:50051',
         package: 'service',
-        protoPath: path_1.join(__dirname, '../../common/proto/auth/service.proto'),
+        protoPath: path_1.join(__dirname, '../../proto/auth/service.proto'),
     },
 };
 exports.usersGrpcClient = {
@@ -55,7 +55,7 @@ exports.usersGrpcClient = {
     options: {
         url: '0.0.0.0:50053',
         package: 'service',
-        protoPath: path_1.join(__dirname, '../../common/proto/users/service.proto'),
+        protoPath: path_1.join(__dirname, '../../proto/users/service.proto'),
     },
 };
 exports.authorizationGrpcClient = {
@@ -63,7 +63,7 @@ exports.authorizationGrpcClient = {
     options: {
         url: '0.0.0.0:50052',
         package: 'service',
-        protoPath: path_1.join(__dirname, '../../common/proto/authorization/service.proto'),
+        protoPath: path_1.join(__dirname, '../../proto/authorization/service.proto'),
     },
 };
 exports.articlesGrpcClient = {
@@ -71,7 +71,7 @@ exports.articlesGrpcClient = {
     options: {
         url: '0.0.0.0:50054',
         package: 'service',
-        protoPath: path_1.join(__dirname, '../../common/proto/articles/service.proto'),
+        protoPath: path_1.join(__dirname, '../../proto/articles/service.proto'),
     },
 };
 exports.commentsGrpcClient = {
@@ -79,7 +79,7 @@ exports.commentsGrpcClient = {
     options: {
         url: '0.0.0.0:50055',
         package: 'service',
-        protoPath: path_1.join(__dirname, '../../common/proto/comments/service.proto'),
+        protoPath: path_1.join(__dirname, '../../proto/comments/service.proto'),
     },
 };
 exports.clientsProviders = [
