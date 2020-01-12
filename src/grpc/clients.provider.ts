@@ -56,7 +56,7 @@ export const authGrpcClient: Client = {
   options:   {
     url:       '0.0.0.0:50051',
     package:   'service',
-    protoPath: join(__dirname, '../proto/auth/service.proto'),
+    protoPath: join(__dirname, '../../proto/auth/service.proto'),
   },
 };
 
@@ -65,7 +65,7 @@ export const usersGrpcClient: Client = {
   options:   {
     url:       '0.0.0.0:50053',
     package:   'service',
-    protoPath: join(__dirname, '../proto/users/service.proto'),
+    protoPath: join(__dirname, '../../proto/users/service.proto'),
   },
 };
 
@@ -74,7 +74,7 @@ export const authorizationGrpcClient: Client = {
   options:   {
     url:       '0.0.0.0:50052',
     package:   'service',
-    protoPath: join(__dirname, '../proto/authorization/service.proto'),
+    protoPath: join(__dirname, '../../proto/authorization/service.proto'),
   },
 };
 
@@ -83,7 +83,7 @@ export const articlesGrpcClient: Client = {
   options:   {
     url:       '0.0.0.0:50054',
     package:   'service',
-    protoPath: join(__dirname, '../proto/articles/service.proto'),
+    protoPath: join(__dirname, '../../proto/articles/service.proto'),
   },
 };
 
@@ -92,7 +92,7 @@ export const commentsGrpcClient: Client = {
   options:   {
     url:       '0.0.0.0:50055',
     package:   'service',
-    protoPath: join(__dirname, '../proto/comments/service.proto'),
+    protoPath: join(__dirname, '../../proto/comments/service.proto'),
   },
 };
 
