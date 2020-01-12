@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "repository": "git://github.com/mallowigi/microblog-common.git",
   "scripts": {
-    "copy": "cp -rv proto dist/proto/",
+    "copy": "cp -rv proto dist/",
     "build": "tsc && npm run copy",
     "prestart": "rimraf dist && mkdirp dist && npm run copy && npm run build",
     "authProto": "grpcnode client ls -I proto auth/service.proto",
